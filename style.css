@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+*
+{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+}
+body
+{
+ background: #0e1d3f;
+ margin: 0;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+}
+:root
+{
+    --card-height:300px;
+    --card-widht: calc(var(--card-height)/1.3);
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:40px 100px ;
+    z-index: 1000;
+    letter-spacing: 0.1em;
+}
+
+#preloader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #571a94;	
+	z-index: 99999;
+    padding-left: 48%;
+    padding-top: 20%;
+}
+
+.flutuar{
+    animation-name: flutuar;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    }
+    #div-fixa{
+        position: fixed;
+        bottom: 20px;
+        margin: 0 20px;
+        width: 280px;
+        border-radius: 50px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: 0.5s all;
+    }
+    
+    #div-fixa img
+    {
+      width: 50px;
+      height: 50px;
+    
+    }
+    #div-fixa img, span
+    {
+    float: left;
+    }
+    
+        
+    #div-fixa span
+    {
+    padding-top: 15px;     
+    margin-left: 15px;
+    }
+    
+    
+    #div-fixa a .flex-itens
+    {
+        display: flex;
+        align-items: center;
+    
+    
+    }
+    #div-fixa a .flex-itens span
+    {
+        display: block;
+        font-weight: bold ;
+        color: rgb(229, 229, 229);
+        margin-left: 5px;
+        min-width: 270px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        opacity: 0;
+    
+    }    
+
+.banner
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    background: url(assets/BGB.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.banner::before
+{
+    content: '';   
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top,  #0e1d3f, transparent 40%);
+    z-index: 100;
+    margin: 0;
+    left: 0;
+}
+
+.banner .content
+{
+    max-width: 550px;
+}
+.banner .content h2
+{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2.2em;
+    letter-spacing: 0.1em;
+    color: #fff;
+}
+.banner .content h2 span
+{
+    font-weight: 800;
+}
+.banner .content p
+{
+    font-size: 1.1em;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.5em;
+    color: #fff;
+    margin: 20px 0 35px;
+}
+header .logo
+{
+    max-width: 120px ;
+    color: rgb(214, 3, 3);
+    text-shadow: 4px 5px 5px black;
+    text-decoration: none;
+    font-size: 5em;
+    font-family: "Bebas Neue", sans-serif;
+}
+header .toggle
+{
+    max-width: 60px;
+    cursor: pointer;
+}
+header .logo,
+header .toggle
+{
+    max-width: 100%;
+}
+.play
+{
+    position: relative;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+}
+.sci
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sci li 
+{
+    list-style: none;
+}
+.sci li a 
+{
+    text-decoration: none;
+}
+.sci li a img
+{
+    filter: invert(1);
+    transform: scale(0.6);
+}
+.play img
+{
+    margin: 10px;
+    max-width: 50px;
+}
+.slide
+{
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 200px / 2);
+    width: 200px;
+    height: 140px;
+    background: url(assets/capa.jpeg);
+    background-size: cover;
+    cursor: pointer;
+    animation: animateB 20s linear infinite;
+}
+@keyframes animateB
+{
+    0%, 100%
+    {
+        background-position: top;
+    }
+    45%, 55%
+    {
+        background-position: bottom;
+    }
+}
+section
+{
+    margin: 0;
+    display: flex;
+    margin-top: 1%;
+}
+.card
+{
+    width: var(--card-widht);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 50px;
+    perspective: 2500px;
+    margin: 0 50px;
+    cursor: pointer;
+}
+.cover-image
+{
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    box-shadow: 5px 7px 15px black;
+    border-radius: 20px;
+}
+.cover-image1
+{
+    width: 108%;
+    height: 105%;
+    object-fit: cover;
+    box-shadow: 5px 7px 15px black;
+    border-radius: 20px;
+}
+.wrapper
+{
+    transition: all 0.5s;
+    position: absolute;
+    width: 105%;
+    z-index: -1;
+    border-radius: 20px;
+}
+.wrapper::before,
+.wrapper::after
+{
+    content: '';
+    opacity: 0;
+    width: 105%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+.wrapper::before
+{
+    top: 0;
+    height: 105%;
+    background-image: linear-gradient(to top, transparent 56%, 
+    rgb(12,13,19,0.5) 78%, rgb(12,13,19)100%);
+    border-radius: 20px;
+
+}
+.wrapper::after
+{
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(to bottom, transparent 50%, 
+    rgb(12,13,19,0.5) 75%, rgb(12,13,19)90%);
+    border-radius: 20px;
+}
+.wrapper1
+{
+    transition: all 0.5s;
+    position: absolute;
+    width: 108%;
+    z-index: -1;
+    border-radius: 20px;
+}
+.wrapper1::before,
+.wrapper1::after
+{
+    content: '';
+    opacity: 0;
+    width: 108%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+.wrapper1::before
+{
+    top: 0;
+    height: 108%;
+    background-image: linear-gradient(to top, transparent 56%, 
+    rgb(12,13,19,0.5) 78%, rgb(12,13,19)100%);
+    border-radius: 20px;
+
+}
+.wrapper1::after
+{
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(to bottom, transparent 50%, 
+    rgb(12,13,19,0.5) 75%, rgb(12,13,19)90%);
+    border-radius: 20px;
+}
+.title
+{
+    opacity: 0;
+    width: 330%;
+    transition: transform 0.5s;
+    padding-left: 15%;
+}
+.character
+{
+    width: 140%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s;
+}
+.character1
+{
+    width:100%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s;
+}
+.character2
+{
+    width:130%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s;
+}
+.character3
+{
+    width:110%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s;
+}
+.character4
+{
+    width:110%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s;
+}
+.card:hover .wrapper
+{
+    transform: perspective(900px) translateY(-5%) 
+    rotateX(25deg) translateZ(0);
+    box-shadow: 0px 35px 32px -8px rgb(0,0,0,0.75);
+}
+.card:hover .wrapper1
+{
+    transform: perspective(900px) translateY(-5%) 
+    rotateX(25deg) translateZ(0);
+    box-shadow: 0px 35px 32px -8px rgb(0,0,0,0.75);
+}
+.card:hover .title
+{
+    opacity: 1;
+    transform: translate3d(0%, -50%, 100px);
+}
+.card:hover .wrapper::after, .wrapper::before
+{
+    opacity: 1;
+}
+.card:hover .wrapper::after
+{
+    height: 120px;
+}
+.card:hover .wrapper::before
+{
+    opacity: 1;
+}
+.card:hover .wrapper1::after, .wrapper1::before
+{
+    opacity: 1;
+}
+.card:hover .wrapper1::after
+{
+    height: 120px;
+}
+.card:hover .wrapper1::before
+{
+    opacity: 1;
+}
+.card:hover .character
+{
+    opacity: 1;
+    transform: translate3d( 0%, -30%, -100px);
+}
+.card:hover .character1
+{
+    opacity: 1;
+    transform: translate3d( 0%, -30%, -100px);
+}
+.card:hover .character2
+{
+    opacity: 1;
+    transform: translate3d( 0%, -30%, -100px);
+}
+.card:hover .character3
+{
+    opacity: 1;
+    transform: translate3d( 0%, -30%, -100px);
+}
+.card:hover .character4
+{
+    opacity: 1;
+    transform: translate3d( 0%, -30%, -100px);
+}
+.pulse
+{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-top: 10%;
+    box-shadow: inset 0 0 40px #287ece, 0 0 50px #287ece;
+    border-radius: 50%;
+    border: 1px solid #287ece;
+    background: url(assets/euteamo.png);
+    background-size: cover;
+    animation: animateEarth 10s linear infinite;
+
+
+}
+.pulse span
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 1.5px solid #287ece;
+    animation: animate 6s linear infinite;
+    animation-delay: calc(var(--i)* -1s);
+    border-radius: 50%;
+}
+@keyframes animate
+{
+    0%
+    {
+        width: 400px;
+        height: 400px;
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        width: 700px;
+        height: 700px;
+        opacity: 1;
+    }
+}
+@keyframes animateEarth
+{
+    0%
+    {
+        background-position-x: 0px;
+    }
+    100%
+    {
+        background-position-x: 360px;
+    }
+}
+.sec
+{
+    position: relative;
+    padding: 100px;
+}
+.sec h2
+{
+    font-size: 3.5em;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 5%;
+}
+.sec p
+{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #fff;
+    font-size: 1.2em;
+}
+#scene 
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+#scene img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.gift-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 15%;
+    padding-top: 10%;
+}
+.gift-container .gift-box
+{
+    position: relative;
+    height: 100px;
+    width: 200px;
+    background-color: #bd48eb;
+    backdrop-filter: brightness(60%);
+
+}
+
+.gift-box::before
+{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background-color: #daa520;
+    left: 80px;
+}
+.gift-box::after
+{
+    content: '';
+    position: absolute;
+    box-shadow: inset 0 10px rgba(0,0,0,0.4);
+    width: 200px;
+    height: 150px;
+}
+.click
+{
+    position: absolute;
+    background-color: #bd48eb;
+    width: 242px;
+    height: 90px;
+    top: -90px;
+    left: -20px;
+    cursor: pointer;
+    z-index:1 ;
+}
+.click::before
+{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 90px;
+    background: #daa520;
+    left: 100px;
+    z-index: 2;
+}
+.click::after
+{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 0;
+    border-bottom: 60px solid #daa520;
+    border-top: 60px solid #daa520;
+    border-left: 0px solid transparent;
+    border-right: 60px solid transparent;
+    transform: rotate(-90deg);
+    top: -93px;
+    left: 90px;
+    z-index: 3;
+}
+.flutuarGift{
+    animation-name: flutuarGift;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    }
+    @keyframes flutuarGift{
+        from{
+            transform:translate3d(0,0,0) ;
+        }
+        to{
+            transform:translate3d(0,-15px,0) ;
+        }
+    }
+
+
